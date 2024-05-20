@@ -1,3 +1,6 @@
 usr
 var
 *.tar*
+*.AppImage
+AppDir/.DirIcon
+AppDir/winbox64.exe

@@ -1,3 +1,11 @@
 #!/bin/sh
 export WINEPREFIX=$HOME/.winbox
+
+# https://gist.github.com/Zeinok/ceaf6ff204792dde0ae31e0199d89398
+if [ -z "$WINBOX_NODARKMODE" ]; then
+  "$APPDIR/wine.AppImage" "regedit" /s "$APPDIR/wine-breeze-dark.reg"
+else
+  "$APPDIR/wine.AppImage" "regedit" /s "$APPDIR/wine-reset-theme.reg"
+fi
+
 exec "$APPDIR/wine.AppImage" "$APPDIR/winbox64.exe"

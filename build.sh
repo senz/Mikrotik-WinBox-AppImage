@@ -2,8 +2,9 @@
 chmod +x AppDir/AppRun
 
 echo "Download wine..."
-LATEST_WINE=$(curl -L "https://api.github.com/repos/mmtrt/WINE_AppImage/releases/latest" | jq -r .assets[0].browser_download_url)
-curl -L $LATEST_WINE -o AppDir/wine.AppImage
+WINE_URL="https://github.com/mmtrt/WINE_AppImage/releases/download/continuous-stable/wine-stable_9.0-x86_64.AppImage"
+# LATEST_WINE=$(curl -L "https://api.github.com/repos/mmtrt/WINE_AppImage/releases/latest" | jq -r .assets[0].browser_download_url)
+curl -L $WINE_URL -o AppDir/wine.AppImage
 chmod +x AppDir/wine.AppImage
 
 if ! command -v appimagetool.AppImage >/dev/null 2>&1
